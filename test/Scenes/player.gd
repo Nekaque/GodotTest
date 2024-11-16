@@ -7,7 +7,7 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(delta : float):
 	
 	if Input.is_key_pressed(KEY_RIGHT):
 		position.x += delta * speed
@@ -16,5 +16,8 @@ func _process(delta):
 	
 	if position.x > get_viewport().size.x:
 		position.x = 0
+		$Splash.play()
+	if position.x < 0:
+		position.x = get_viewport().size.x
 		$Splash.play()
 	pass
