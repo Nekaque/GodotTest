@@ -1,9 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjrw255v1dj8y"]
+[gd_scene load_steps=4 format=3 uid="uid://bjrw255v1dj8y"]
 
-[ext_resource type="Texture2D" uid="uid://dao11sm2spkls" path="res://Assets/icon.svg" id="1_7ufle"]
+[ext_resource type="Script" path="res://Scenes/player.gd" id="1_3m87w"]
+[ext_resource type="Texture2D" uid="uid://dao11sm2spkls" path="res://Assets/icon.svg" id="1_ynmmo"]
+[ext_resource type="AudioStream" uid="uid://burg8m3kqjev3" path="res://Assets/splash.wav" id="3_bntya"]
 
 [node name="Level1" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(589, 323)
-texture = ExtResource("1_7ufle")
+[node name="Player" type="Node2D" parent="."]
+position = Vector2(276, 344)
+script = ExtResource("1_3m87w")
+
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+texture = ExtResource("1_ynmmo")
+
+[node name="Splash" type="AudioStreamPlayer2D" parent="Player"]
+stream = ExtResource("3_bntya")
